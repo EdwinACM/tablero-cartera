@@ -1,0 +1,35 @@
+{
+  "nota": "Umbrales de ejemplo para ilustrar el semáforo. Un valor igual o mayor al de rojo es rojo; igual o mayor al de ámbar es ámbar. Todos los indicadores son porcentajes y mientras más alto, peor.",
+  "indicadores": {
+    "mora_2mas_clientes": {
+      "nombre": "Clientes con 2 meses o más de atraso (% de clientes)",
+      "ambar": 10,
+      "rojo": 15
+    },
+    "mora_2mas_exposicion": {
+      "nombre": "Exposición con 2 meses o más de atraso (% de la exposición)",
+      "ambar": 10,
+      "rojo": 15
+    },
+    "uso_alto_exposicion": {
+      "nombre": "Exposición en clientes con uso de 90% o más de la línea (% de la exposición)",
+      "ambar": 25,
+      "rojo": 40
+    },
+    "concentracion_top10": {
+      "nombre": "Exposición del 10% de clientes con más saldo (% de la exposición)",
+      "ambar": 40,
+      "rojo": 50
+    },
+    "roll_empeora": {
+      "nombre": "Clientes al corriente que caen en atraso el mes siguiente (% de los al corriente)",
+      "ambar": 5,
+      "rojo": 8
+    },
+    "roll_a_3mas": {
+      "nombre": "Clientes con 1 a 2 meses de atraso que pasan a 3 o más (% de ese grupo)",
+      "ambar": 6,
+      "rojo": 10
+    }
+  }
+}

@@ -1,0 +1,4351 @@
+{
+ "meta": {
+  "fuente": "UCI Machine Learning Repository, Default of Credit Card Clients (Yeh y Lien, 2009). 30,000 clientes de tarjeta de Taiwán, abril a septiembre de 2005.",
+  "moneda": "Dólares de Taiwán (NT$), la moneda de la base",
+  "clientes": 30000,
+  "meses": [
+   "abr",
+   "may",
+   "jun",
+   "jul",
+   "ago",
+   "sep"
+  ],
+  "nota_mora": "De abril a agosto la base casi no registra 1 mes de atraso y salta de 0 a 2. Por eso la mora de 1 mes o más da un salto en septiembre y la de 2 meses o más es la serie comparable.",
+  "nota_incumplimiento": "El incumplimiento observado es el del mes siguiente (octubre) y solo se muestra junto al estado de septiembre.",
+  "aviso": "Datos públicos de 2005 con fines educativos. No hay información de ningún banco."
+ },
+ "segmentos": [
+  {
+   "id": "todos",
+   "nombre": "Toda la cartera"
+  },
+  {
+   "id": "l1",
+   "nombre": "Línea hasta 50 mil"
+  },
+  {
+   "id": "l2",
+   "nombre": "Línea de 50 a 100 mil"
+  },
+  {
+   "id": "l3",
+   "nombre": "Línea de 100 a 200 mil"
+  },
+  {
+   "id": "l4",
+   "nombre": "Línea de 200 a 400 mil"
+  },
+  {
+   "id": "l5",
+   "nombre": "Línea de más de 400 mil"
+  }
+ ],
+ "bandas_uso": [
+  "Sin saldo",
+  "1 a 30%",
+  "30 a 60%",
+  "60 a 90%",
+  "90% o más"
+ ],
+ "estados": [
+  "Sin consumo",
+  "Pagó el total",
+  "Revolvente al corriente",
+  "1 mes de atraso",
+  "2 meses",
+  "3 meses",
+  "4 meses o más"
+ ],
+ "grupos_mora": [
+  "Al corriente",
+  "1 a 2 meses",
+  "3 o más"
+ ],
+ "umbrales": {
+  "mora_2mas_clientes": {
+   "nombre": "Clientes con 2 meses o más de atraso (% de clientes)",
+   "ambar": 10,
+   "rojo": 15
+  },
+  "mora_2mas_exposicion": {
+   "nombre": "Exposición con 2 meses o más de atraso (% de la exposición)",
+   "ambar": 10,
+   "rojo": 15
+  },
+  "uso_alto_exposicion": {
+   "nombre": "Exposición en clientes con uso de 90% o más de la línea (% de la exposición)",
+   "ambar": 25,
+   "rojo": 40
+  },
+  "concentracion_top10": {
+   "nombre": "Exposición del 10% de clientes con más saldo (% de la exposición)",
+   "ambar": 40,
+   "rojo": 50
+  },
+  "roll_empeora": {
+   "nombre": "Clientes al corriente que caen en atraso el mes siguiente (% de los al corriente)",
+   "ambar": 5,
+   "rojo": 8
+  },
+  "roll_a_3mas": {
+   "nombre": "Clientes con 1 a 2 meses de atraso que pasan a 3 o más (% de ese grupo)",
+   "ambar": 6,
+   "rojo": 10
+  }
+ },
+ "meses": {
+  "abr": {
+   "todos": {
+    "clientes": 30000,
+    "exposicion": 1168268063,
+    "mora_1mas_clientes": 3079,
+    "mora_2mas_clientes": 3079,
+    "mora_3mas_clientes": 313,
+    "mora_1mas_exposicion": 152825201,
+    "mora_2mas_exposicion": 152825201,
+    "top10_exposicion": 550842076,
+    "estados": [
+     {
+      "clientes": 4895,
+      "exposicion": 13097339
+     },
+     {
+      "clientes": 5740,
+      "exposicion": 53236566
+     },
+     {
+      "clientes": 16286,
+      "exposicion": 949108957
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 2766,
+      "exposicion": 142426416
+     },
+     {
+      "clientes": 184,
+      "exposicion": 6826529
+     },
+     {
+      "clientes": 129,
+      "exposicion": 3572256
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 4708,
+      "exposicion": 0
+     },
+     {
+      "clientes": 12312,
+      "exposicion": 184687551
+     },
+     {
+      "clientes": 5861,
+      "exposicion": 341562537
+     },
+     {
+      "clientes": 4281,
+      "exposicion": 419654413
+     },
+     {
+      "clientes": 2838,
+      "exposicion": 222363562
+     }
+    ]
+   },
+   "l1": {
+    "clientes": 7676,
+    "exposicion": 120488203,
+    "mora_1mas_clientes": 1315,
+    "mora_2mas_clientes": 1315,
+    "mora_3mas_clientes": 203,
+    "mora_1mas_exposicion": 27524477,
+    "mora_2mas_exposicion": 27524477,
+    "top10_exposicion": 32716051,
+    "estados": [
+     {
+      "clientes": 817,
+      "exposicion": 505773
+     },
+     {
+      "clientes": 820,
+      "exposicion": 3685477
+     },
+     {
+      "clientes": 4724,
+      "exposicion": 88772476
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1112,
+      "exposicion": 24907960
+     },
+     {
+      "clientes": 112,
+      "exposicion": 1820803
+     },
+     {
+      "clientes": 91,
+      "exposicion": 795714
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1152,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1643,
+      "exposicion": 7820752
+     },
+     {
+      "clientes": 1978,
+      "exposicion": 36692057
+     },
+     {
+      "clientes": 1290,
+      "exposicion": 29901814
+     },
+     {
+      "clientes": 1613,
+      "exposicion": 46073580
+     }
+    ]
+   },
+   "l2": {
+    "clientes": 4822,
+    "exposicion": 153091077,
+    "mora_1mas_clientes": 688,
+    "mora_2mas_clientes": 688,
+    "mora_3mas_clientes": 52,
+    "mora_1mas_exposicion": 31596088,
+    "mora_2mas_exposicion": 31596088,
+    "top10_exposicion": 41072409,
+    "estados": [
+     {
+      "clientes": 487,
+      "exposicion": 590378
+     },
+     {
+      "clientes": 696,
+      "exposicion": 5366050
+     },
+     {
+      "clientes": 2951,
+      "exposicion": 115538561
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 636,
+      "exposicion": 29073313
+     },
+     {
+      "clientes": 37,
+      "exposicion": 1759104
+     },
+     {
+      "clientes": 15,
+      "exposicion": 763671
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 535,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1532,
+      "exposicion": 13252759
+     },
+     {
+      "clientes": 1341,
+      "exposicion": 46883739
+     },
+     {
+      "clientes": 917,
+      "exposicion": 53327285
+     },
+     {
+      "clientes": 497,
+      "exposicion": 39627294
+     }
+    ]
+   },
+   "l3": {
+    "clientes": 7880,
+    "exposicion": 337525502,
+    "mora_1mas_clientes": 724,
+    "mora_2mas_clientes": 724,
+    "mora_3mas_clientes": 32,
+    "mora_1mas_exposicion": 55590278,
+    "mora_2mas_exposicion": 55590278,
+    "top10_exposicion": 118236590,
+    "estados": [
+     {
+      "clientes": 1438,
+      "exposicion": 3166810
+     },
+     {
+      "clientes": 1749,
+      "exposicion": 12732573
+     },
+     {
+      "clientes": 3969,
+      "exposicion": 266035841
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 692,
+      "exposicion": 53508771
+     },
+     {
+      "clientes": 17,
+      "exposicion": 1402198
+     },
+     {
+      "clientes": 15,
+      "exposicion": 679309
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1443,
+      "exposicion": 0
+     },
+     {
+      "clientes": 3412,
+      "exposicion": 39284582
+     },
+     {
+      "clientes": 1313,
+      "exposicion": 88039035
+     },
+     {
+      "clientes": 1177,
+      "exposicion": 131934438
+     },
+     {
+      "clientes": 535,
+      "exposicion": 78267447
+     }
+    ]
+   },
+   "l4": {
+    "clientes": 7818,
+    "exposicion": 406019830,
+    "mora_1mas_clientes": 318,
+    "mora_2mas_clientes": 318,
+    "mora_3mas_clientes": 20,
+    "mora_1mas_exposicion": 33691717,
+    "mora_2mas_exposicion": 33691717,
+    "top10_exposicion": 179918647,
+    "estados": [
+     {
+      "clientes": 1790,
+      "exposicion": 5473501
+     },
+     {
+      "clientes": 2002,
+      "exposicion": 20386217
+     },
+     {
+      "clientes": 3708,
+      "exposicion": 346468395
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 298,
+      "exposicion": 31487490
+     },
+     {
+      "clientes": 14,
+      "exposicion": 1400871
+     },
+     {
+      "clientes": 6,
+      "exposicion": 803356
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1375,
+      "exposicion": 0
+     },
+     {
+      "clientes": 4516,
+      "exposicion": 83798388
+     },
+     {
+      "clientes": 1006,
+      "exposicion": 123406016
+     },
+     {
+      "clientes": 754,
+      "exposicion": 153205463
+     },
+     {
+      "clientes": 167,
+      "exposicion": 45609963
+     }
+    ]
+   },
+   "l5": {
+    "clientes": 1804,
+    "exposicion": 151143451,
+    "mora_1mas_clientes": 34,
+    "mora_2mas_clientes": 34,
+    "mora_3mas_clientes": 6,
+    "mora_1mas_exposicion": 4422641,
+    "mora_2mas_exposicion": 4422641,
+    "top10_exposicion": 68099253,
+    "estados": [
+     {
+      "clientes": 363,
+      "exposicion": 3360877
+     },
+     {
+      "clientes": 473,
+      "exposicion": 11066249
+     },
+     {
+      "clientes": 934,
+      "exposicion": 132293684
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 28,
+      "exposicion": 3448882
+     },
+     {
+      "clientes": 4,
+      "exposicion": 443553
+     },
+     {
+      "clientes": 2,
+      "exposicion": 530206
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 203,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1209,
+      "exposicion": 40531070
+     },
+     {
+      "clientes": 223,
+      "exposicion": 46541690
+     },
+     {
+      "clientes": 143,
+      "exposicion": 51285413
+     },
+     {
+      "clientes": 26,
+      "exposicion": 12785278
+     }
+    ]
+   }
+  },
+  "may": {
+   "todos": {
+    "clientes": 30000,
+    "exposicion": 1210412763,
+    "mora_1mas_clientes": 2968,
+    "mora_2mas_clientes": 2968,
+    "mora_3mas_clientes": 342,
+    "mora_1mas_exposicion": 147132882,
+    "mora_2mas_exposicion": 147132882,
+    "top10_exposicion": 564310009,
+    "estados": [
+     {
+      "clientes": 4546,
+      "exposicion": 13495751
+     },
+     {
+      "clientes": 5539,
+      "exposicion": 54019679
+     },
+     {
+      "clientes": 16947,
+      "exposicion": 995764451
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 2626,
+      "exposicion": 134422019
+     },
+     {
+      "clientes": 178,
+      "exposicion": 6814694
+     },
+     {
+      "clientes": 164,
+      "exposicion": 5896169
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 4161,
+      "exposicion": 0
+     },
+     {
+      "clientes": 12367,
+      "exposicion": 188763953
+     },
+     {
+      "clientes": 5921,
+      "exposicion": 346200558
+     },
+     {
+      "clientes": 4537,
+      "exposicion": 435497487
+     },
+     {
+      "clientes": 3014,
+      "exposicion": 239950765
+     }
+    ]
+   },
+   "l1": {
+    "clientes": 7676,
+    "exposicion": 127391763,
+    "mora_1mas_clientes": 1315,
+    "mora_2mas_clientes": 1315,
+    "mora_3mas_clientes": 218,
+    "mora_1mas_exposicion": 27843752,
+    "mora_2mas_exposicion": 27843752,
+    "top10_exposicion": 33413937,
+    "estados": [
+     {
+      "clientes": 600,
+      "exposicion": 533495
+     },
+     {
+      "clientes": 813,
+      "exposicion": 4513896
+     },
+     {
+      "clientes": 4948,
+      "exposicion": 94500620
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1097,
+      "exposicion": 24671293
+     },
+     {
+      "clientes": 111,
+      "exposicion": 2036283
+     },
+     {
+      "clientes": 107,
+      "exposicion": 1136176
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 845,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1640,
+      "exposicion": 8129365
+     },
+     {
+      "clientes": 2009,
+      "exposicion": 36749782
+     },
+     {
+      "clientes": 1452,
+      "exposicion": 33588798
+     },
+     {
+      "clientes": 1730,
+      "exposicion": 48923818
+     }
+    ]
+   },
+   "l2": {
+    "clientes": 4822,
+    "exposicion": 156585566,
+    "mora_1mas_clientes": 674,
+    "mora_2mas_clientes": 674,
+    "mora_3mas_clientes": 65,
+    "mora_1mas_exposicion": 30532759,
+    "mora_2mas_exposicion": 30532759,
+    "top10_exposicion": 41614734,
+    "estados": [
+     {
+      "clientes": 479,
+      "exposicion": 645698
+     },
+     {
+      "clientes": 625,
+      "exposicion": 4120100
+     },
+     {
+      "clientes": 3044,
+      "exposicion": 121287009
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 609,
+      "exposicion": 27344531
+     },
+     {
+      "clientes": 37,
+      "exposicion": 1764314
+     },
+     {
+      "clientes": 28,
+      "exposicion": 1423914
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 513,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1502,
+      "exposicion": 12970571
+     },
+     {
+      "clientes": 1340,
+      "exposicion": 46696175
+     },
+     {
+      "clientes": 964,
+      "exposicion": 56547474
+     },
+     {
+      "clientes": 503,
+      "exposicion": 40371346
+     }
+    ]
+   },
+   "l3": {
+    "clientes": 7880,
+    "exposicion": 347475593,
+    "mora_1mas_clientes": 638,
+    "mora_2mas_clientes": 638,
+    "mora_3mas_clientes": 40,
+    "mora_1mas_exposicion": 50162592,
+    "mora_2mas_exposicion": 50162592,
+    "top10_exposicion": 119709730,
+    "estados": [
+     {
+      "clientes": 1366,
+      "exposicion": 3135371
+     },
+     {
+      "clientes": 1699,
+      "exposicion": 13363429
+     },
+     {
+      "clientes": 4177,
+      "exposicion": 280814201
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 598,
+      "exposicion": 47379889
+     },
+     {
+      "clientes": 22,
+      "exposicion": 1781989
+     },
+     {
+      "clientes": 18,
+      "exposicion": 1000714
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1270,
+      "exposicion": 0
+     },
+     {
+      "clientes": 3520,
+      "exposicion": 41134732
+     },
+     {
+      "clientes": 1330,
+      "exposicion": 89213665
+     },
+     {
+      "clientes": 1204,
+      "exposicion": 135038599
+     },
+     {
+      "clientes": 556,
+      "exposicion": 82088597
+     }
+    ]
+   },
+   "l4": {
+    "clientes": 7818,
+    "exposicion": 423290166,
+    "mora_1mas_clientes": 305,
+    "mora_2mas_clientes": 305,
+    "mora_3mas_clientes": 15,
+    "mora_1mas_exposicion": 34113341,
+    "mora_2mas_exposicion": 34113341,
+    "top10_exposicion": 184156908,
+    "estados": [
+     {
+      "clientes": 1741,
+      "exposicion": 5504423
+     },
+     {
+      "clientes": 1955,
+      "exposicion": 21385187
+     },
+     {
+      "clientes": 3817,
+      "exposicion": 362287215
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 290,
+      "exposicion": 31498584
+     },
+     {
+      "clientes": 7,
+      "exposicion": 1229458
+     },
+     {
+      "clientes": 8,
+      "exposicion": 1385299
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1331,
+      "exposicion": 0
+     },
+     {
+      "clientes": 4500,
+      "exposicion": 85033388
+     },
+     {
+      "clientes": 1025,
+      "exposicion": 127911448
+     },
+     {
+      "clientes": 766,
+      "exposicion": 156129770
+     },
+     {
+      "clientes": 196,
+      "exposicion": 54215560
+     }
+    ]
+   },
+   "l5": {
+    "clientes": 1804,
+    "exposicion": 155669675,
+    "mora_1mas_clientes": 36,
+    "mora_2mas_clientes": 36,
+    "mora_3mas_clientes": 4,
+    "mora_1mas_exposicion": 4480438,
+    "mora_2mas_exposicion": 4480438,
+    "top10_exposicion": 69388682,
+    "estados": [
+     {
+      "clientes": 360,
+      "exposicion": 3676764
+     },
+     {
+      "clientes": 447,
+      "exposicion": 10637067
+     },
+     {
+      "clientes": 961,
+      "exposicion": 136875406
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 32,
+      "exposicion": 3527722
+     },
+     {
+      "clientes": 1,
+      "exposicion": 2650
+     },
+     {
+      "clientes": 3,
+      "exposicion": 950066
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 202,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1205,
+      "exposicion": 41495897
+     },
+     {
+      "clientes": 217,
+      "exposicion": 45629488
+     },
+     {
+      "clientes": 151,
+      "exposicion": 54192846
+     },
+     {
+      "clientes": 29,
+      "exposicion": 14351444
+     }
+    ]
+   }
+  },
+  "jun": {
+   "todos": {
+    "clientes": 30000,
+    "exposicion": 1298989558,
+    "mora_1mas_clientes": 3510,
+    "mora_2mas_clientes": 3508,
+    "mora_3mas_clientes": 349,
+    "mora_1mas_exposicion": 165735247,
+    "mora_2mas_exposicion": 165363715,
+    "top10_exposicion": 597892614,
+    "estados": [
+     {
+      "clientes": 4348,
+      "exposicion": 15175069
+     },
+     {
+      "clientes": 5687,
+      "exposicion": 59835664
+     },
+     {
+      "clientes": 16455,
+      "exposicion": 1058243578
+     },
+     {
+      "clientes": 2,
+      "exposicion": 371532
+     },
+     {
+      "clientes": 3159,
+      "exposicion": 150227234
+     },
+     {
+      "clientes": 180,
+      "exposicion": 8505628
+     },
+     {
+      "clientes": 169,
+      "exposicion": 6630853
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 3870,
+      "exposicion": 0
+     },
+     {
+      "clientes": 12118,
+      "exposicion": 187554464
+     },
+     {
+      "clientes": 5433,
+      "exposicion": 328500213
+     },
+     {
+      "clientes": 4713,
+      "exposicion": 443051260
+     },
+     {
+      "clientes": 3866,
+      "exposicion": 339883621
+     }
+    ]
+   },
+   "l1": {
+    "clientes": 7676,
+    "exposicion": 141018012,
+    "mora_1mas_clientes": 1575,
+    "mora_2mas_clientes": 1575,
+    "mora_3mas_clientes": 218,
+    "mora_1mas_exposicion": 32579311,
+    "mora_2mas_exposicion": 32579311,
+    "top10_exposicion": 37124249,
+    "estados": [
+     {
+      "clientes": 515,
+      "exposicion": 472360
+     },
+     {
+      "clientes": 787,
+      "exposicion": 4100738
+     },
+     {
+      "clientes": 4799,
+      "exposicion": 103865603
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1357,
+      "exposicion": 29267598
+     },
+     {
+      "clientes": 115,
+      "exposicion": 2273802
+     },
+     {
+      "clientes": 103,
+      "exposicion": 1037911
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 651,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1591,
+      "exposicion": 7654316
+     },
+     {
+      "clientes": 1776,
+      "exposicion": 31989027
+     },
+     {
+      "clientes": 1611,
+      "exposicion": 39042577
+     },
+     {
+      "clientes": 2047,
+      "exposicion": 62332092
+     }
+    ]
+   },
+   "l2": {
+    "clientes": 4822,
+    "exposicion": 170976525,
+    "mora_1mas_clientes": 752,
+    "mora_2mas_clientes": 752,
+    "mora_3mas_clientes": 61,
+    "mora_1mas_exposicion": 34773970,
+    "mora_2mas_exposicion": 34773970,
+    "top10_exposicion": 43224031,
+    "estados": [
+     {
+      "clientes": 419,
+      "exposicion": 549936
+     },
+     {
+      "clientes": 628,
+      "exposicion": 4154065
+     },
+     {
+      "clientes": 3023,
+      "exposicion": 131498554
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 691,
+      "exposicion": 31516113
+     },
+     {
+      "clientes": 30,
+      "exposicion": 1739793
+     },
+     {
+      "clientes": 31,
+      "exposicion": 1518064
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 473,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1437,
+      "exposicion": 12518983
+     },
+     {
+      "clientes": 1175,
+      "exposicion": 41170420
+     },
+     {
+      "clientes": 1015,
+      "exposicion": 60337960
+     },
+     {
+      "clientes": 722,
+      "exposicion": 56949162
+     }
+    ]
+   },
+   "l3": {
+    "clientes": 7880,
+    "exposicion": 368489530,
+    "mora_1mas_clientes": 749,
+    "mora_2mas_clientes": 749,
+    "mora_3mas_clientes": 46,
+    "mora_1mas_exposicion": 54601665,
+    "mora_2mas_exposicion": 54601665,
+    "top10_exposicion": 124699392,
+    "estados": [
+     {
+      "clientes": 1319,
+      "exposicion": 3705506
+     },
+     {
+      "clientes": 1761,
+      "exposicion": 12885645
+     },
+     {
+      "clientes": 4051,
+      "exposicion": 297296714
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 703,
+      "exposicion": 50844895
+     },
+     {
+      "clientes": 25,
+      "exposicion": 2350183
+     },
+     {
+      "clientes": 21,
+      "exposicion": 1406587
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1213,
+      "exposicion": 0
+     },
+     {
+      "clientes": 3488,
+      "exposicion": 40809936
+     },
+     {
+      "clientes": 1278,
+      "exposicion": 86561216
+     },
+     {
+      "clientes": 1177,
+      "exposicion": 133600191
+     },
+     {
+      "clientes": 724,
+      "exposicion": 107518187
+     }
+    ]
+   },
+   "l4": {
+    "clientes": 7818,
+    "exposicion": 452174302,
+    "mora_1mas_clientes": 375,
+    "mora_2mas_clientes": 374,
+    "mora_3mas_clientes": 19,
+    "mora_1mas_exposicion": 37745877,
+    "mora_2mas_exposicion": 37438523,
+    "top10_exposicion": 195598779,
+    "estados": [
+     {
+      "clientes": 1731,
+      "exposicion": 6105296
+     },
+     {
+      "clientes": 2048,
+      "exposicion": 25828127
+     },
+     {
+      "clientes": 3664,
+      "exposicion": 382495002
+     },
+     {
+      "clientes": 1,
+      "exposicion": 307354
+     },
+     {
+      "clientes": 355,
+      "exposicion": 33574925
+     },
+     {
+      "clientes": 7,
+      "exposicion": 1650207
+     },
+     {
+      "clientes": 12,
+      "exposicion": 2213391
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1335,
+      "exposicion": 0
+     },
+     {
+      "clientes": 4411,
+      "exposicion": 85028181
+     },
+     {
+      "clientes": 991,
+      "exposicion": 123191242
+     },
+     {
+      "clientes": 758,
+      "exposicion": 154556691
+     },
+     {
+      "clientes": 323,
+      "exposicion": 89398188
+     }
+    ]
+   },
+   "l5": {
+    "clientes": 1804,
+    "exposicion": 166331189,
+    "mora_1mas_clientes": 59,
+    "mora_2mas_clientes": 58,
+    "mora_3mas_clientes": 5,
+    "mora_1mas_exposicion": 6034424,
+    "mora_2mas_exposicion": 5970246,
+    "top10_exposicion": 73717574,
+    "estados": [
+     {
+      "clientes": 364,
+      "exposicion": 4341971
+     },
+     {
+      "clientes": 463,
+      "exposicion": 12867089
+     },
+     {
+      "clientes": 918,
+      "exposicion": 143087705
+     },
+     {
+      "clientes": 1,
+      "exposicion": 64178
+     },
+     {
+      "clientes": 53,
+      "exposicion": 5023703
+     },
+     {
+      "clientes": 3,
+      "exposicion": 491643
+     },
+     {
+      "clientes": 2,
+      "exposicion": 454900
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 198,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1191,
+      "exposicion": 41543048
+     },
+     {
+      "clientes": 213,
+      "exposicion": 45588308
+     },
+     {
+      "clientes": 152,
+      "exposicion": 55513841
+     },
+     {
+      "clientes": 50,
+      "exposicion": 23685992
+     }
+    ]
+   }
+  },
+  "jul": {
+   "todos": {
+    "clientes": 30000,
+    "exposicion": 1411355065,
+    "mora_1mas_clientes": 4213,
+    "mora_2mas_clientes": 4209,
+    "mora_3mas_clientes": 390,
+    "mora_1mas_exposicion": 199422080,
+    "mora_2mas_exposicion": 198947996,
+    "top10_exposicion": 641808737,
+    "estados": [
+     {
+      "clientes": 4085,
+      "exposicion": 18141295
+     },
+     {
+      "clientes": 5938,
+      "exposicion": 65719033
+     },
+     {
+      "clientes": 15764,
+      "exposicion": 1128072657
+     },
+     {
+      "clientes": 4,
+      "exposicion": 474084
+     },
+     {
+      "clientes": 3819,
+      "exposicion": 180037910
+     },
+     {
+      "clientes": 240,
+      "exposicion": 9990951
+     },
+     {
+      "clientes": 150,
+      "exposicion": 8919135
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 3525,
+      "exposicion": 0
+     },
+     {
+      "clientes": 11902,
+      "exposicion": 179093487
+     },
+     {
+      "clientes": 4704,
+      "exposicion": 297730156
+     },
+     {
+      "clientes": 4857,
+      "exposicion": 444597367
+     },
+     {
+      "clientes": 5012,
+      "exposicion": 489934055
+     }
+    ]
+   },
+   "l1": {
+    "clientes": 7676,
+    "exposicion": 158846323,
+    "mora_1mas_clientes": 1875,
+    "mora_2mas_clientes": 1875,
+    "mora_3mas_clientes": 243,
+    "mora_1mas_exposicion": 38833791,
+    "mora_2mas_exposicion": 38833791,
+    "top10_exposicion": 39760315,
+    "estados": [
+     {
+      "clientes": 409,
+      "exposicion": 490153
+     },
+     {
+      "clientes": 799,
+      "exposicion": 4410056
+     },
+     {
+      "clientes": 4593,
+      "exposicion": 115112323
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1632,
+      "exposicion": 34258937
+     },
+     {
+      "clientes": 154,
+      "exposicion": 2935531
+     },
+     {
+      "clientes": 89,
+      "exposicion": 1639323
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 563,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1435,
+      "exposicion": 6381589
+     },
+     {
+      "clientes": 1463,
+      "exposicion": 25296239
+     },
+     {
+      "clientes": 1838,
+      "exposicion": 45241286
+     },
+     {
+      "clientes": 2377,
+      "exposicion": 81927209
+     }
+    ]
+   },
+   "l2": {
+    "clientes": 4822,
+    "exposicion": 191291031,
+    "mora_1mas_clientes": 852,
+    "mora_2mas_clientes": 851,
+    "mora_3mas_clientes": 68,
+    "mora_1mas_exposicion": 39596212,
+    "mora_2mas_exposicion": 39522252,
+    "top10_exposicion": 46199741,
+    "estados": [
+     {
+      "clientes": 370,
+      "exposicion": 1767752
+     },
+     {
+      "clientes": 630,
+      "exposicion": 5125381
+     },
+     {
+      "clientes": 2970,
+      "exposicion": 144801686
+     },
+     {
+      "clientes": 1,
+      "exposicion": 73960
+     },
+     {
+      "clientes": 783,
+      "exposicion": 35756759
+     },
+     {
+      "clientes": 43,
+      "exposicion": 2261456
+     },
+     {
+      "clientes": 25,
+      "exposicion": 1504037
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 420,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1369,
+      "exposicion": 11893640
+     },
+     {
+      "clientes": 988,
+      "exposicion": 35372077
+     },
+     {
+      "clientes": 979,
+      "exposicion": 59139530
+     },
+     {
+      "clientes": 1066,
+      "exposicion": 84885784
+     }
+    ]
+   },
+   "l3": {
+    "clientes": 7880,
+    "exposicion": 398679476,
+    "mora_1mas_clientes": 916,
+    "mora_2mas_clientes": 916,
+    "mora_3mas_clientes": 51,
+    "mora_1mas_exposicion": 63446552,
+    "mora_2mas_exposicion": 63446552,
+    "top10_exposicion": 131422093,
+    "estados": [
+     {
+      "clientes": 1231,
+      "exposicion": 4573836
+     },
+     {
+      "clientes": 1831,
+      "exposicion": 13616856
+     },
+     {
+      "clientes": 3902,
+      "exposicion": 317042232
+     },
+     {
+      "clientes": 0,
+      "exposicion": 0
+     },
+     {
+      "clientes": 865,
+      "exposicion": 58953311
+     },
+     {
+      "clientes": 30,
+      "exposicion": 2411465
+     },
+     {
+      "clientes": 21,
+      "exposicion": 2081776
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1098,
+      "exposicion": 0
+     },
+     {
+      "clientes": 3511,
+      "exposicion": 40618540
+     },
+     {
+      "clientes": 1131,
+      "exposicion": 77729890
+     },
+     {
+      "clientes": 1130,
+      "exposicion": 129372983
+     },
+     {
+      "clientes": 1010,
+      "exposicion": 150958063
+     }
+    ]
+   },
+   "l4": {
+    "clientes": 7818,
+    "exposicion": 486586950,
+    "mora_1mas_clientes": 506,
+    "mora_2mas_clientes": 504,
+    "mora_3mas_clientes": 25,
+    "mora_1mas_exposicion": 46941569,
+    "mora_2mas_exposicion": 46604455,
+    "top10_exposicion": 209385055,
+    "estados": [
+     {
+      "clientes": 1720,
+      "exposicion": 7331516
+     },
+     {
+      "clientes": 2145,
+      "exposicion": 25361479
+     },
+     {
+      "clientes": 3447,
+      "exposicion": 406952386
+     },
+     {
+      "clientes": 2,
+      "exposicion": 337114
+     },
+     {
+      "clientes": 479,
+      "exposicion": 41463029
+     },
+     {
+      "clientes": 12,
+      "exposicion": 1911324
+     },
+     {
+      "clientes": 13,
+      "exposicion": 3230102
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1259,
+      "exposicion": 0
+     },
+     {
+      "clientes": 4405,
+      "exposicion": 82114114
+     },
+     {
+      "clientes": 916,
+      "exposicion": 115089275
+     },
+     {
+      "clientes": 757,
+      "exposicion": 155166625
+     },
+     {
+      "clientes": 481,
+      "exposicion": 134216936
+     }
+    ]
+   },
+   "l5": {
+    "clientes": 1804,
+    "exposicion": 175951285,
+    "mora_1mas_clientes": 64,
+    "mora_2mas_clientes": 63,
+    "mora_3mas_clientes": 3,
+    "mora_1mas_exposicion": 10603956,
+    "mora_2mas_exposicion": 10540946,
+    "top10_exposicion": 79114496,
+    "estados": [
+     {
+      "clientes": 355,
+      "exposicion": 3978038
+     },
+     {
+      "clientes": 533,
+      "exposicion": 17205261
+     },
+     {
+      "clientes": 852,
+      "exposicion": 144164030
+     },
+     {
+      "clientes": 1,
+      "exposicion": 63010
+     },
+     {
+      "clientes": 60,
+      "exposicion": 9605874
+     },
+     {
+      "clientes": 1,
+      "exposicion": 471175
+     },
+     {
+      "clientes": 2,
+      "exposicion": 463897
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 185,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1182,
+      "exposicion": 38085604
+     },
+     {
+      "clientes": 206,
+      "exposicion": 44242675
+     },
+     {
+      "clientes": 153,
+      "exposicion": 55676943
+     },
+     {
+      "clientes": 78,
+      "exposicion": 37946063
+     }
+    ]
+   }
+  },
+  "ago": {
+   "todos": {
+    "clientes": 30000,
+    "exposicion": 1476195541,
+    "mora_1mas_clientes": 4438,
+    "mora_2mas_clientes": 4410,
+    "mora_3mas_clientes": 483,
+    "mora_1mas_exposicion": 225580184,
+    "mora_2mas_exposicion": 224680256,
+    "top10_exposicion": 664129211,
+    "estados": [
+     {
+      "clientes": 3782,
+      "exposicion": 19906712
+     },
+     {
+      "clientes": 6050,
+      "exposicion": 56730576
+     },
+     {
+      "clientes": 15730,
+      "exposicion": 1173978069
+     },
+     {
+      "clientes": 28,
+      "exposicion": 899928
+     },
+     {
+      "clientes": 3927,
+      "exposicion": 198138786
+     },
+     {
+      "clientes": 326,
+      "exposicion": 15369279
+     },
+     {
+      "clientes": 157,
+      "exposicion": 11172191
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 3175,
+      "exposicion": 0
+     },
+     {
+      "clientes": 11880,
+      "exposicion": 173320397
+     },
+     {
+      "clientes": 4374,
+      "exposicion": 284163192
+     },
+     {
+      "clientes": 4969,
+      "exposicion": 435011506
+     },
+     {
+      "clientes": 5602,
+      "exposicion": 583700446
+     }
+    ]
+   },
+   "l1": {
+    "clientes": 7676,
+    "exposicion": 168120146,
+    "mora_1mas_clientes": 1959,
+    "mora_2mas_clientes": 1953,
+    "mora_3mas_clientes": 287,
+    "mora_1mas_exposicion": 42818828,
+    "mora_2mas_exposicion": 42767965,
+    "top10_exposicion": 40587807,
+    "estados": [
+     {
+      "clientes": 321,
+      "exposicion": 758549
+     },
+     {
+      "clientes": 806,
+      "exposicion": 4390946
+     },
+     {
+      "clientes": 4590,
+      "exposicion": 120151823
+     },
+     {
+      "clientes": 6,
+      "exposicion": 50863
+     },
+     {
+      "clientes": 1666,
+      "exposicion": 36010602
+     },
+     {
+      "clientes": 190,
+      "exposicion": 4541664
+     },
+     {
+      "clientes": 97,
+      "exposicion": 2215699
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 437,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1446,
+      "exposicion": 6537198
+     },
+     {
+      "clientes": 1301,
+      "exposicion": 21327993
+     },
+     {
+      "clientes": 2064,
+      "exposicion": 50178331
+     },
+     {
+      "clientes": 2428,
+      "exposicion": 90076624
+     }
+    ]
+   },
+   "l2": {
+    "clientes": 4822,
+    "exposicion": 202690104,
+    "mora_1mas_clientes": 936,
+    "mora_2mas_clientes": 929,
+    "mora_3mas_clientes": 79,
+    "mora_1mas_exposicion": 44067325,
+    "mora_2mas_exposicion": 44023845,
+    "top10_exposicion": 46982247,
+    "estados": [
+     {
+      "clientes": 308,
+      "exposicion": 1267197
+     },
+     {
+      "clientes": 639,
+      "exposicion": 5041513
+     },
+     {
+      "clientes": 2939,
+      "exposicion": 152314069
+     },
+     {
+      "clientes": 7,
+      "exposicion": 43480
+     },
+     {
+      "clientes": 850,
+      "exposicion": 39552838
+     },
+     {
+      "clientes": 51,
+      "exposicion": 2303836
+     },
+     {
+      "clientes": 28,
+      "exposicion": 2167171
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 346,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1360,
+      "exposicion": 11393096
+     },
+     {
+      "clientes": 892,
+      "exposicion": 32085793
+     },
+     {
+      "clientes": 944,
+      "exposicion": 57610240
+     },
+     {
+      "clientes": 1280,
+      "exposicion": 101600975
+     }
+    ]
+   },
+   "l3": {
+    "clientes": 7880,
+    "exposicion": 419711868,
+    "mora_1mas_clientes": 944,
+    "mora_2mas_clientes": 940,
+    "mora_3mas_clientes": 66,
+    "mora_1mas_exposicion": 69309695,
+    "mora_2mas_exposicion": 69309695,
+    "top10_exposicion": 135510442,
+    "estados": [
+     {
+      "clientes": 1141,
+      "exposicion": 4790502
+     },
+     {
+      "clientes": 1897,
+      "exposicion": 14944306
+     },
+     {
+      "clientes": 3898,
+      "exposicion": 330667365
+     },
+     {
+      "clientes": 4,
+      "exposicion": 0
+     },
+     {
+      "clientes": 874,
+      "exposicion": 63514421
+     },
+     {
+      "clientes": 49,
+      "exposicion": 3427730
+     },
+     {
+      "clientes": 17,
+      "exposicion": 2367544
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1017,
+      "exposicion": 0
+     },
+     {
+      "clientes": 3470,
+      "exposicion": 38701216
+     },
+     {
+      "clientes": 1112,
+      "exposicion": 76971877
+     },
+     {
+      "clientes": 1082,
+      "exposicion": 124413207
+     },
+     {
+      "clientes": 1199,
+      "exposicion": 179625568
+     }
+    ]
+   },
+   "l4": {
+    "clientes": 7818,
+    "exposicion": 508781948,
+    "mora_1mas_clientes": 516,
+    "mora_2mas_clientes": 508,
+    "mora_3mas_clientes": 49,
+    "mora_1mas_exposicion": 54031558,
+    "mora_2mas_exposicion": 53289166,
+    "top10_exposicion": 217100374,
+    "estados": [
+     {
+      "clientes": 1648,
+      "exposicion": 8305103
+     },
+     {
+      "clientes": 2198,
+      "exposicion": 23538769
+     },
+     {
+      "clientes": 3456,
+      "exposicion": 422906518
+     },
+     {
+      "clientes": 8,
+      "exposicion": 742392
+     },
+     {
+      "clientes": 459,
+      "exposicion": 44750451
+     },
+     {
+      "clientes": 35,
+      "exposicion": 4586820
+     },
+     {
+      "clientes": 14,
+      "exposicion": 3951895
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1206,
+      "exposicion": 0
+     },
+     {
+      "clientes": 4403,
+      "exposicion": 79567863
+     },
+     {
+      "clientes": 864,
+      "exposicion": 109410677
+     },
+     {
+      "clientes": 745,
+      "exposicion": 153298211
+     },
+     {
+      "clientes": 600,
+      "exposicion": 166505197
+     }
+    ]
+   },
+   "l5": {
+    "clientes": 1804,
+    "exposicion": 176891475,
+    "mora_1mas_clientes": 83,
+    "mora_2mas_clientes": 80,
+    "mora_3mas_clientes": 2,
+    "mora_1mas_exposicion": 15352778,
+    "mora_2mas_exposicion": 15289585,
+    "top10_exposicion": 80901007,
+    "estados": [
+     {
+      "clientes": 364,
+      "exposicion": 4785361
+     },
+     {
+      "clientes": 510,
+      "exposicion": 8815042
+     },
+     {
+      "clientes": 847,
+      "exposicion": 147938294
+     },
+     {
+      "clientes": 3,
+      "exposicion": 63193
+     },
+     {
+      "clientes": 78,
+      "exposicion": 14310474
+     },
+     {
+      "clientes": 1,
+      "exposicion": 509229
+     },
+     {
+      "clientes": 1,
+      "exposicion": 469882
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 169,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1201,
+      "exposicion": 37121024
+     },
+     {
+      "clientes": 205,
+      "exposicion": 44366852
+     },
+     {
+      "clientes": 134,
+      "exposicion": 49511517
+     },
+     {
+      "clientes": 95,
+      "exposicion": 45892082
+     }
+    ]
+   }
+  },
+  "sep": {
+   "todos": {
+    "clientes": 30000,
+    "exposicion": 1537381257,
+    "mora_1mas_clientes": 6818,
+    "mora_2mas_clientes": 3130,
+    "mora_3mas_clientes": 463,
+    "mora_1mas_exposicion": 297721892,
+    "mora_2mas_exposicion": 197038144,
+    "top10_exposicion": 688679169,
+    "estados": [
+     {
+      "clientes": 2759,
+      "exposicion": 24393445,
+      "incumplen_siguiente_mes": 365
+     },
+     {
+      "clientes": 5686,
+      "exposicion": 59621483,
+      "incumplen_siguiente_mes": 954
+     },
+     {
+      "clientes": 14737,
+      "exposicion": 1155644437,
+      "incumplen_siguiente_mes": 1888
+     },
+     {
+      "clientes": 3688,
+      "exposicion": 100683748,
+      "incumplen_siguiente_mes": 1252
+     },
+     {
+      "clientes": 2667,
+      "exposicion": 173056954,
+      "incumplen_siguiente_mes": 1844
+     },
+     {
+      "clientes": 322,
+      "exposicion": 12178164,
+      "incumplen_siguiente_mes": 244
+     },
+     {
+      "clientes": 141,
+      "exposicion": 11803026,
+      "incumplen_siguiente_mes": 89
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 2598,
+      "exposicion": 0
+     },
+     {
+      "clientes": 12194,
+      "exposicion": 171898465
+     },
+     {
+      "clientes": 4307,
+      "exposicion": 280022254
+     },
+     {
+      "clientes": 4851,
+      "exposicion": 428280486
+     },
+     {
+      "clientes": 6050,
+      "exposicion": 657180052
+     }
+    ],
+    "incumplen_siguiente_mes": 6636
+   },
+   "l1": {
+    "clientes": 7676,
+    "exposicion": 172097578,
+    "mora_1mas_clientes": 2493,
+    "mora_2mas_clientes": 1319,
+    "mora_3mas_clientes": 270,
+    "mora_1mas_exposicion": 52048804,
+    "mora_2mas_exposicion": 30822529,
+    "top10_exposicion": 41274605,
+    "estados": [
+     {
+      "clientes": 174,
+      "exposicion": 977480,
+      "incumplen_siguiente_mes": 19
+     },
+     {
+      "clientes": 804,
+      "exposicion": 5061939,
+      "incumplen_siguiente_mes": 207
+     },
+     {
+      "clientes": 4205,
+      "exposicion": 114009355,
+      "incumplen_siguiente_mes": 807
+     },
+     {
+      "clientes": 1174,
+      "exposicion": 21226275,
+      "incumplen_siguiente_mes": 496
+     },
+     {
+      "clientes": 1049,
+      "exposicion": 25344393,
+      "incumplen_siguiente_mes": 718
+     },
+     {
+      "clientes": 184,
+      "exposicion": 3171658,
+      "incumplen_siguiente_mes": 142
+     },
+     {
+      "clientes": 86,
+      "exposicion": 2306478,
+      "incumplen_siguiente_mes": 51
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 318,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1525,
+      "exposicion": 6641619
+     },
+     {
+      "clientes": 1313,
+      "exposicion": 20922524
+     },
+     {
+      "clientes": 2067,
+      "exposicion": 50108308
+     },
+     {
+      "clientes": 2453,
+      "exposicion": 94425127
+     }
+    ],
+    "incumplen_siguiente_mes": 2440
+   },
+   "l2": {
+    "clientes": 4822,
+    "exposicion": 211531152,
+    "mora_1mas_clientes": 1308,
+    "mora_2mas_clientes": 719,
+    "mora_3mas_clientes": 84,
+    "mora_1mas_exposicion": 58122564,
+    "mora_2mas_exposicion": 40119686,
+    "top10_exposicion": 48242058,
+    "estados": [
+     {
+      "clientes": 186,
+      "exposicion": 1693784,
+      "incumplen_siguiente_mes": 17
+     },
+     {
+      "clientes": 607,
+      "exposicion": 5433522,
+      "incumplen_siguiente_mes": 129
+     },
+     {
+      "clientes": 2721,
+      "exposicion": 146281282,
+      "incumplen_siguiente_mes": 379
+     },
+     {
+      "clientes": 589,
+      "exposicion": 18002878,
+      "incumplen_siguiente_mes": 206
+     },
+     {
+      "clientes": 635,
+      "exposicion": 35029737,
+      "incumplen_siguiente_mes": 455
+     },
+     {
+      "clientes": 62,
+      "exposicion": 3311496,
+      "incumplen_siguiente_mes": 47
+     },
+     {
+      "clientes": 22,
+      "exposicion": 1778453,
+      "incumplen_siguiente_mes": 11
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 257,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1389,
+      "exposicion": 11319617
+     },
+     {
+      "clientes": 838,
+      "exposicion": 30275153
+     },
+     {
+      "clientes": 875,
+      "exposicion": 53247687
+     },
+     {
+      "clientes": 1463,
+      "exposicion": 116688695
+     }
+    ],
+    "incumplen_siguiente_mes": 1244
+   },
+   "l3": {
+    "clientes": 7880,
+    "exposicion": 436970830,
+    "mora_1mas_clientes": 1578,
+    "mora_2mas_clientes": 652,
+    "mora_3mas_clientes": 63,
+    "mora_1mas_exposicion": 86704303,
+    "mora_2mas_exposicion": 57607317,
+    "top10_exposicion": 139139555,
+    "estados": [
+     {
+      "clientes": 793,
+      "exposicion": 6232586,
+      "incumplen_siguiente_mes": 104
+     },
+     {
+      "clientes": 1790,
+      "exposicion": 14592996,
+      "incumplen_siguiente_mes": 306
+     },
+     {
+      "clientes": 3719,
+      "exposicion": 329440945,
+      "incumplen_siguiente_mes": 397
+     },
+     {
+      "clientes": 926,
+      "exposicion": 29096986,
+      "incumplen_siguiente_mes": 276
+     },
+     {
+      "clientes": 589,
+      "exposicion": 52296654,
+      "incumplen_siguiente_mes": 409
+     },
+     {
+      "clientes": 46,
+      "exposicion": 2725722,
+      "incumplen_siguiente_mes": 31
+     },
+     {
+      "clientes": 17,
+      "exposicion": 2584941,
+      "incumplen_siguiente_mes": 12
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 828,
+      "exposicion": 0
+     },
+     {
+      "clientes": 3576,
+      "exposicion": 38230399
+     },
+     {
+      "clientes": 1104,
+      "exposicion": 76913794
+     },
+     {
+      "clientes": 1031,
+      "exposicion": 118797936
+     },
+     {
+      "clientes": 1341,
+      "exposicion": 203028701
+     }
+    ],
+    "incumplen_siguiente_mes": 1535
+   },
+   "l4": {
+    "clientes": 7818,
+    "exposicion": 529264510,
+    "mora_1mas_clientes": 1230,
+    "mora_2mas_clientes": 376,
+    "mora_3mas_clientes": 42,
+    "mora_1mas_exposicion": 77109031,
+    "mora_2mas_exposicion": 52096633,
+    "top10_exposicion": 223707306,
+    "estados": [
+     {
+      "clientes": 1279,
+      "exposicion": 9365455,
+      "incumplen_siguiente_mes": 183
+     },
+     {
+      "clientes": 2020,
+      "exposicion": 24602840,
+      "incumplen_siguiente_mes": 268
+     },
+     {
+      "clientes": 3289,
+      "exposicion": 418187184,
+      "incumplen_siguiente_mes": 254
+     },
+     {
+      "clientes": 854,
+      "exposicion": 25012398,
+      "incumplen_siguiente_mes": 242
+     },
+     {
+      "clientes": 334,
+      "exposicion": 44986618,
+      "incumplen_siguiente_mes": 218
+     },
+     {
+      "clientes": 28,
+      "exposicion": 2961681,
+      "incumplen_siguiente_mes": 22
+     },
+     {
+      "clientes": 14,
+      "exposicion": 4148334,
+      "incumplen_siguiente_mes": 13
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 1045,
+      "exposicion": 0
+     },
+     {
+      "clientes": 4514,
+      "exposicion": 79868148
+     },
+     {
+      "clientes": 844,
+      "exposicion": 107032308
+     },
+     {
+      "clientes": 728,
+      "exposicion": 150670822
+     },
+     {
+      "clientes": 687,
+      "exposicion": 191693232
+     }
+    ],
+    "incumplen_siguiente_mes": 1200
+   },
+   "l5": {
+    "clientes": 1804,
+    "exposicion": 187517187,
+    "mora_1mas_clientes": 209,
+    "mora_2mas_clientes": 64,
+    "mora_3mas_clientes": 4,
+    "mora_1mas_exposicion": 23737190,
+    "mora_2mas_exposicion": 16391979,
+    "top10_exposicion": 83037096,
+    "estados": [
+     {
+      "clientes": 327,
+      "exposicion": 6124140,
+      "incumplen_siguiente_mes": 42
+     },
+     {
+      "clientes": 465,
+      "exposicion": 9930186,
+      "incumplen_siguiente_mes": 44
+     },
+     {
+      "clientes": 803,
+      "exposicion": 147725671,
+      "incumplen_siguiente_mes": 51
+     },
+     {
+      "clientes": 145,
+      "exposicion": 7345211,
+      "incumplen_siguiente_mes": 32
+     },
+     {
+      "clientes": 60,
+      "exposicion": 15399552,
+      "incumplen_siguiente_mes": 44
+     },
+     {
+      "clientes": 2,
+      "exposicion": 7607,
+      "incumplen_siguiente_mes": 2
+     },
+     {
+      "clientes": 2,
+      "exposicion": 984820,
+      "incumplen_siguiente_mes": 2
+     }
+    ],
+    "uso": [
+     {
+      "clientes": 150,
+      "exposicion": 0
+     },
+     {
+      "clientes": 1190,
+      "exposicion": 35838682
+     },
+     {
+      "clientes": 208,
+      "exposicion": 44878475
+     },
+     {
+      "clientes": 150,
+      "exposicion": 55455733
+     },
+     {
+      "clientes": 106,
+      "exposicion": 51344297
+     }
+    ],
+    "incumplen_siguiente_mes": 217
+   }
+  }
+ },
+ "transiciones": {
+  "abr": {
+   "todos": null,
+   "l1": null,
+   "l2": null,
+   "l3": null,
+   "l4": null,
+   "l5": null
+  },
+  "may": {
+   "todos": [
+    [
+     26059,
+     862,
+     0
+    ],
+    [
+     930,
+     1702,
+     134
+    ],
+    [
+     43,
+     62,
+     208
+    ]
+   ],
+   "l1": [
+    [
+     5999,
+     362,
+     0
+    ],
+    [
+     335,
+     697,
+     80
+    ],
+    [
+     27,
+     38,
+     138
+    ]
+   ],
+   "l2": [
+    [
+     3959,
+     175,
+     0
+    ],
+    [
+     184,
+     423,
+     29
+    ],
+    [
+     5,
+     11,
+     36
+    ]
+   ],
+   "l3": [
+    [
+     6978,
+     178,
+     0
+    ],
+    [
+     261,
+     412,
+     19
+    ],
+    [
+     3,
+     8,
+     21
+    ]
+   ],
+   "l4": [
+    [
+     7371,
+     129,
+     0
+    ],
+    [
+     136,
+     156,
+     6
+    ],
+    [
+     6,
+     5,
+     9
+    ]
+   ],
+   "l5": [
+    [
+     1752,
+     18,
+     0
+    ],
+    [
+     14,
+     14,
+     0
+    ],
+    [
+     2,
+     0,
+     4
+    ]
+   ]
+  },
+  "jun": {
+   "todos": [
+    [
+     25777,
+     1255,
+     0
+    ],
+    [
+     689,
+     1806,
+     131
+    ],
+    [
+     24,
+     100,
+     218
+    ]
+   ],
+   "l1": [
+    [
+     5824,
+     537,
+     0
+    ],
+    [
+     263,
+     748,
+     86
+    ],
+    [
+     14,
+     72,
+     132
+    ]
+   ],
+   "l2": [
+    [
+     3907,
+     241,
+     0
+    ],
+    [
+     157,
+     435,
+     17
+    ],
+    [
+     6,
+     15,
+     44
+    ]
+   ],
+   "l3": [
+    [
+     6976,
+     266,
+     0
+    ],
+    [
+     152,
+     426,
+     20
+    ],
+    [
+     3,
+     11,
+     26
+    ]
+   ],
+   "l4": [
+    [
+     7341,
+     172,
+     0
+    ],
+    [
+     101,
+     182,
+     7
+    ],
+    [
+     1,
+     2,
+     12
+    ]
+   ],
+   "l5": [
+    [
+     1729,
+     39,
+     0
+    ],
+    [
+     16,
+     15,
+     1
+    ],
+    [
+     0,
+     0,
+     4
+    ]
+   ]
+  },
+  "jul": {
+   "todos": [
+    [
+     24866,
+     1624,
+     0
+    ],
+    [
+     894,
+     2063,
+     204
+    ],
+    [
+     27,
+     136,
+     186
+    ]
+   ],
+   "l1": [
+    [
+     5436,
+     665,
+     0
+    ],
+    [
+     350,
+     873,
+     134
+    ],
+    [
+     15,
+     94,
+     109
+    ]
+   ],
+   "l2": [
+    [
+     3782,
+     288,
+     0
+    ],
+    [
+     181,
+     476,
+     34
+    ],
+    [
+     7,
+     20,
+     34
+    ]
+   ],
+   "l3": [
+    [
+     6757,
+     374,
+     0
+    ],
+    [
+     204,
+     474,
+     25
+    ],
+    [
+     3,
+     17,
+     26
+    ]
+   ],
+   "l4": [
+    [
+     7183,
+     260,
+     0
+    ],
+    [
+     128,
+     217,
+     11
+    ],
+    [
+     1,
+     4,
+     14
+    ]
+   ],
+   "l5": [
+    [
+     1708,
+     37,
+     0
+    ],
+    [
+     31,
+     23,
+     0
+    ],
+    [
+     1,
+     1,
+     3
+    ]
+   ]
+  },
+  "ago": {
+   "todos": [
+    [
+     24286,
+     1501,
+     0
+    ],
+    [
+     1225,
+     2308,
+     290
+    ],
+    [
+     51,
+     146,
+     193
+    ]
+   ],
+   "l1": [
+    [
+     5222,
+     579,
+     0
+    ],
+    [
+     468,
+     991,
+     173
+    ],
+    [
+     27,
+     102,
+     114
+    ]
+   ],
+   "l2": [
+    [
+     3654,
+     316,
+     0
+    ],
+    [
+     221,
+     520,
+     43
+    ],
+    [
+     11,
+     21,
+     36
+    ]
+   ],
+   "l3": [
+    [
+     6635,
+     329,
+     0
+    ],
+    [
+     292,
+     531,
+     42
+    ],
+    [
+     9,
+     18,
+     24
+    ]
+   ],
+   "l4": [
+    [
+     7082,
+     230,
+     0
+    ],
+    [
+     216,
+     234,
+     31
+    ],
+    [
+     4,
+     3,
+     18
+    ]
+   ],
+   "l5": [
+    [
+     1693,
+     47,
+     0
+    ],
+    [
+     28,
+     32,
+     1
+    ],
+    [
+     0,
+     2,
+     1
+    ]
+   ]
+  },
+  "sep": {
+   "todos": [
+    [
+     22735,
+     2827,
+     0
+    ],
+    [
+     392,
+     3291,
+     272
+    ],
+    [
+     55,
+     237,
+     191
+    ]
+   ],
+   "l1": [
+    [
+     5062,
+     655,
+     0
+    ],
+    [
+     100,
+     1415,
+     157
+    ],
+    [
+     21,
+     153,
+     113
+    ]
+   ],
+   "l2": [
+    [
+     3444,
+     442,
+     0
+    ],
+    [
+     61,
+     742,
+     54
+    ],
+    [
+     9,
+     40,
+     30
+    ]
+   ],
+   "l3": [
+    [
+     6159,
+     777,
+     0
+    ],
+    [
+     128,
+     713,
+     37
+    ],
+    [
+     15,
+     25,
+     26
+    ]
+   ],
+   "l4": [
+    [
+     6487,
+     815,
+     0
+    ],
+    [
+     91,
+     354,
+     22
+    ],
+    [
+     10,
+     19,
+     20
+    ]
+   ],
+   "l5": [
+    [
+     1583,
+     138,
+     0
+    ],
+    [
+     12,
+     67,
+     2
+    ],
+    [
+     0,
+     0,
+     2
+    ]
+   ]
+  }
+ },
+ "alertas": [
+  {
+   "mes": "abr",
+   "segmento": "todos",
+   "indicador": "mora_2mas_clientes",
+   "valor": 10.26,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "todos",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 13.08,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "todos",
+   "indicador": "uso_alto_exposicion",
+   "valor": 19.03,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "todos",
+   "indicador": "concentracion_top10",
+   "valor": 47.15,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l1",
+   "indicador": "mora_2mas_clientes",
+   "valor": 17.13,
+   "estado": "rojo"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l1",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 22.84,
+   "estado": "rojo"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l1",
+   "indicador": "uso_alto_exposicion",
+   "valor": 38.24,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l1",
+   "indicador": "concentracion_top10",
+   "valor": 27.15,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l2",
+   "indicador": "mora_2mas_clientes",
+   "valor": 14.27,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l2",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 20.64,
+   "estado": "rojo"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l2",
+   "indicador": "uso_alto_exposicion",
+   "valor": 25.88,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l2",
+   "indicador": "concentracion_top10",
+   "valor": 26.83,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l3",
+   "indicador": "mora_2mas_clientes",
+   "valor": 9.19,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l3",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 16.47,
+   "estado": "rojo"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l3",
+   "indicador": "uso_alto_exposicion",
+   "valor": 23.19,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l3",
+   "indicador": "concentracion_top10",
+   "valor": 35.03,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l4",
+   "indicador": "mora_2mas_clientes",
+   "valor": 4.07,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l4",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 8.3,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l4",
+   "indicador": "uso_alto_exposicion",
+   "valor": 11.23,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l4",
+   "indicador": "concentracion_top10",
+   "valor": 44.31,
+   "estado": "ambar"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l5",
+   "indicador": "mora_2mas_clientes",
+   "valor": 1.88,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l5",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 2.93,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l5",
+   "indicador": "uso_alto_exposicion",
+   "valor": 8.46,
+   "estado": "verde"
+  },
+  {
+   "mes": "abr",
+   "segmento": "l5",
+   "indicador": "concentracion_top10",
+   "valor": 45.06,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "todos",
+   "indicador": "mora_2mas_clientes",
+   "valor": 9.89,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "todos",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 12.16,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "todos",
+   "indicador": "uso_alto_exposicion",
+   "valor": 19.82,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "todos",
+   "indicador": "concentracion_top10",
+   "valor": 46.62,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "todos",
+   "indicador": "roll_empeora",
+   "valor": 3.2,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "todos",
+   "indicador": "roll_a_3mas",
+   "valor": 4.84,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l1",
+   "indicador": "mora_2mas_clientes",
+   "valor": 17.13,
+   "estado": "rojo"
+  },
+  {
+   "mes": "may",
+   "segmento": "l1",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 21.86,
+   "estado": "rojo"
+  },
+  {
+   "mes": "may",
+   "segmento": "l1",
+   "indicador": "uso_alto_exposicion",
+   "valor": 38.4,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l1",
+   "indicador": "concentracion_top10",
+   "valor": 26.23,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l1",
+   "indicador": "roll_empeora",
+   "valor": 5.69,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l1",
+   "indicador": "roll_a_3mas",
+   "valor": 7.19,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l2",
+   "indicador": "mora_2mas_clientes",
+   "valor": 13.98,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l2",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 19.5,
+   "estado": "rojo"
+  },
+  {
+   "mes": "may",
+   "segmento": "l2",
+   "indicador": "uso_alto_exposicion",
+   "valor": 25.78,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l2",
+   "indicador": "concentracion_top10",
+   "valor": 26.58,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l2",
+   "indicador": "roll_empeora",
+   "valor": 4.23,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l2",
+   "indicador": "roll_a_3mas",
+   "valor": 4.56,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l3",
+   "indicador": "mora_2mas_clientes",
+   "valor": 8.1,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l3",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 14.44,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l3",
+   "indicador": "uso_alto_exposicion",
+   "valor": 23.62,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l3",
+   "indicador": "concentracion_top10",
+   "valor": 34.45,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l3",
+   "indicador": "roll_empeora",
+   "valor": 2.49,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l3",
+   "indicador": "roll_a_3mas",
+   "valor": 2.75,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l4",
+   "indicador": "mora_2mas_clientes",
+   "valor": 3.9,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l4",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 8.06,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l4",
+   "indicador": "uso_alto_exposicion",
+   "valor": 12.81,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l4",
+   "indicador": "concentracion_top10",
+   "valor": 43.51,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l4",
+   "indicador": "roll_empeora",
+   "valor": 1.72,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l4",
+   "indicador": "roll_a_3mas",
+   "valor": 2.01,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l5",
+   "indicador": "mora_2mas_clientes",
+   "valor": 2.0,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l5",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 2.88,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l5",
+   "indicador": "uso_alto_exposicion",
+   "valor": 9.22,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l5",
+   "indicador": "concentracion_top10",
+   "valor": 44.57,
+   "estado": "ambar"
+  },
+  {
+   "mes": "may",
+   "segmento": "l5",
+   "indicador": "roll_empeora",
+   "valor": 1.02,
+   "estado": "verde"
+  },
+  {
+   "mes": "may",
+   "segmento": "l5",
+   "indicador": "roll_a_3mas",
+   "valor": 0.0,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "todos",
+   "indicador": "mora_2mas_clientes",
+   "valor": 11.69,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "todos",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 12.73,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "todos",
+   "indicador": "uso_alto_exposicion",
+   "valor": 26.17,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "todos",
+   "indicador": "concentracion_top10",
+   "valor": 46.03,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "todos",
+   "indicador": "roll_empeora",
+   "valor": 4.64,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "todos",
+   "indicador": "roll_a_3mas",
+   "valor": 4.99,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l1",
+   "indicador": "mora_2mas_clientes",
+   "valor": 20.52,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l1",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 23.1,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l1",
+   "indicador": "uso_alto_exposicion",
+   "valor": 44.2,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l1",
+   "indicador": "concentracion_top10",
+   "valor": 26.33,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l1",
+   "indicador": "roll_empeora",
+   "valor": 8.44,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l1",
+   "indicador": "roll_a_3mas",
+   "valor": 7.84,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l2",
+   "indicador": "mora_2mas_clientes",
+   "valor": 15.6,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l2",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 20.34,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l2",
+   "indicador": "uso_alto_exposicion",
+   "valor": 33.31,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l2",
+   "indicador": "concentracion_top10",
+   "valor": 25.28,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l2",
+   "indicador": "roll_empeora",
+   "valor": 5.81,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l2",
+   "indicador": "roll_a_3mas",
+   "valor": 2.79,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l3",
+   "indicador": "mora_2mas_clientes",
+   "valor": 9.51,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l3",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 14.82,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l3",
+   "indicador": "uso_alto_exposicion",
+   "valor": 29.18,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l3",
+   "indicador": "concentracion_top10",
+   "valor": 33.84,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l3",
+   "indicador": "roll_empeora",
+   "valor": 3.67,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l3",
+   "indicador": "roll_a_3mas",
+   "valor": 3.34,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l4",
+   "indicador": "mora_2mas_clientes",
+   "valor": 4.78,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l4",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 8.28,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l4",
+   "indicador": "uso_alto_exposicion",
+   "valor": 19.77,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l4",
+   "indicador": "concentracion_top10",
+   "valor": 43.26,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l4",
+   "indicador": "roll_empeora",
+   "valor": 2.29,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l4",
+   "indicador": "roll_a_3mas",
+   "valor": 2.41,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l5",
+   "indicador": "mora_2mas_clientes",
+   "valor": 3.22,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l5",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 3.59,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l5",
+   "indicador": "uso_alto_exposicion",
+   "valor": 14.24,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l5",
+   "indicador": "concentracion_top10",
+   "valor": 44.32,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l5",
+   "indicador": "roll_empeora",
+   "valor": 2.21,
+   "estado": "verde"
+  },
+  {
+   "mes": "jun",
+   "segmento": "l5",
+   "indicador": "roll_a_3mas",
+   "valor": 3.12,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "todos",
+   "indicador": "mora_2mas_clientes",
+   "valor": 14.03,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "todos",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 14.1,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "todos",
+   "indicador": "uso_alto_exposicion",
+   "valor": 34.71,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "todos",
+   "indicador": "concentracion_top10",
+   "valor": 45.47,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "todos",
+   "indicador": "roll_empeora",
+   "valor": 6.13,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "todos",
+   "indicador": "roll_a_3mas",
+   "valor": 6.45,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l1",
+   "indicador": "mora_2mas_clientes",
+   "valor": 24.43,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l1",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 24.45,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l1",
+   "indicador": "uso_alto_exposicion",
+   "valor": 51.58,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l1",
+   "indicador": "concentracion_top10",
+   "valor": 25.03,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l1",
+   "indicador": "roll_empeora",
+   "valor": 10.9,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l1",
+   "indicador": "roll_a_3mas",
+   "valor": 9.87,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l2",
+   "indicador": "mora_2mas_clientes",
+   "valor": 17.65,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l2",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 20.66,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l2",
+   "indicador": "uso_alto_exposicion",
+   "valor": 44.38,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l2",
+   "indicador": "concentracion_top10",
+   "valor": 24.15,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l2",
+   "indicador": "roll_empeora",
+   "valor": 7.08,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l2",
+   "indicador": "roll_a_3mas",
+   "valor": 4.92,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l3",
+   "indicador": "mora_2mas_clientes",
+   "valor": 11.62,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l3",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 15.91,
+   "estado": "rojo"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l3",
+   "indicador": "uso_alto_exposicion",
+   "valor": 37.86,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l3",
+   "indicador": "concentracion_top10",
+   "valor": 32.96,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l3",
+   "indicador": "roll_empeora",
+   "valor": 5.24,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l3",
+   "indicador": "roll_a_3mas",
+   "valor": 3.56,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l4",
+   "indicador": "mora_2mas_clientes",
+   "valor": 6.45,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l4",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 9.58,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l4",
+   "indicador": "uso_alto_exposicion",
+   "valor": 27.58,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l4",
+   "indicador": "concentracion_top10",
+   "valor": 43.03,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l4",
+   "indicador": "roll_empeora",
+   "valor": 3.49,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l4",
+   "indicador": "roll_a_3mas",
+   "valor": 3.09,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l5",
+   "indicador": "mora_2mas_clientes",
+   "valor": 3.49,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l5",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 5.99,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l5",
+   "indicador": "uso_alto_exposicion",
+   "valor": 21.57,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l5",
+   "indicador": "concentracion_top10",
+   "valor": 44.96,
+   "estado": "ambar"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l5",
+   "indicador": "roll_empeora",
+   "valor": 2.12,
+   "estado": "verde"
+  },
+  {
+   "mes": "jul",
+   "segmento": "l5",
+   "indicador": "roll_a_3mas",
+   "valor": 0.0,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "todos",
+   "indicador": "mora_2mas_clientes",
+   "valor": 14.7,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "todos",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 15.22,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "todos",
+   "indicador": "uso_alto_exposicion",
+   "valor": 39.54,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "todos",
+   "indicador": "concentracion_top10",
+   "valor": 44.99,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "todos",
+   "indicador": "roll_empeora",
+   "valor": 5.82,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "todos",
+   "indicador": "roll_a_3mas",
+   "valor": 7.59,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l1",
+   "indicador": "mora_2mas_clientes",
+   "valor": 25.44,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l1",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 25.44,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l1",
+   "indicador": "uso_alto_exposicion",
+   "valor": 53.58,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l1",
+   "indicador": "concentracion_top10",
+   "valor": 24.14,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l1",
+   "indicador": "roll_empeora",
+   "valor": 9.98,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l1",
+   "indicador": "roll_a_3mas",
+   "valor": 10.6,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l2",
+   "indicador": "mora_2mas_clientes",
+   "valor": 19.27,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l2",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 21.72,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l2",
+   "indicador": "uso_alto_exposicion",
+   "valor": 50.13,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l2",
+   "indicador": "concentracion_top10",
+   "valor": 23.18,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l2",
+   "indicador": "roll_empeora",
+   "valor": 7.96,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l2",
+   "indicador": "roll_a_3mas",
+   "valor": 5.48,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l3",
+   "indicador": "mora_2mas_clientes",
+   "valor": 11.93,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l3",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 16.51,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l3",
+   "indicador": "uso_alto_exposicion",
+   "valor": 42.8,
+   "estado": "rojo"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l3",
+   "indicador": "concentracion_top10",
+   "valor": 32.29,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l3",
+   "indicador": "roll_empeora",
+   "valor": 4.72,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l3",
+   "indicador": "roll_a_3mas",
+   "valor": 4.86,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l4",
+   "indicador": "mora_2mas_clientes",
+   "valor": 6.5,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l4",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 10.47,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l4",
+   "indicador": "uso_alto_exposicion",
+   "valor": 32.73,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l4",
+   "indicador": "concentracion_top10",
+   "valor": 42.67,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l4",
+   "indicador": "roll_empeora",
+   "valor": 3.15,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l4",
+   "indicador": "roll_a_3mas",
+   "valor": 6.44,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l5",
+   "indicador": "mora_2mas_clientes",
+   "valor": 4.43,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l5",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 8.64,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l5",
+   "indicador": "uso_alto_exposicion",
+   "valor": 25.94,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l5",
+   "indicador": "concentracion_top10",
+   "valor": 45.73,
+   "estado": "ambar"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l5",
+   "indicador": "roll_empeora",
+   "valor": 2.7,
+   "estado": "verde"
+  },
+  {
+   "mes": "ago",
+   "segmento": "l5",
+   "indicador": "roll_a_3mas",
+   "valor": 1.64,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "todos",
+   "indicador": "mora_2mas_clientes",
+   "valor": 10.43,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "todos",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 12.82,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "todos",
+   "indicador": "uso_alto_exposicion",
+   "valor": 42.75,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "todos",
+   "indicador": "concentracion_top10",
+   "valor": 44.8,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "todos",
+   "indicador": "roll_empeora",
+   "valor": 11.06,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "todos",
+   "indicador": "roll_a_3mas",
+   "valor": 6.88,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l1",
+   "indicador": "mora_2mas_clientes",
+   "valor": 17.18,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l1",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 17.91,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l1",
+   "indicador": "uso_alto_exposicion",
+   "valor": 54.87,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l1",
+   "indicador": "concentracion_top10",
+   "valor": 23.98,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l1",
+   "indicador": "roll_empeora",
+   "valor": 11.46,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l1",
+   "indicador": "roll_a_3mas",
+   "valor": 9.39,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l2",
+   "indicador": "mora_2mas_clientes",
+   "valor": 14.91,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l2",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 18.97,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l2",
+   "indicador": "uso_alto_exposicion",
+   "valor": 55.16,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l2",
+   "indicador": "concentracion_top10",
+   "valor": 22.81,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l2",
+   "indicador": "roll_empeora",
+   "valor": 11.37,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l2",
+   "indicador": "roll_a_3mas",
+   "valor": 6.3,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l3",
+   "indicador": "mora_2mas_clientes",
+   "valor": 8.27,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l3",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 13.18,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l3",
+   "indicador": "uso_alto_exposicion",
+   "valor": 46.46,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l3",
+   "indicador": "concentracion_top10",
+   "valor": 31.84,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l3",
+   "indicador": "roll_empeora",
+   "valor": 11.2,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l3",
+   "indicador": "roll_a_3mas",
+   "valor": 4.21,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l4",
+   "indicador": "mora_2mas_clientes",
+   "valor": 4.81,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l4",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 9.84,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l4",
+   "indicador": "uso_alto_exposicion",
+   "valor": 36.22,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l4",
+   "indicador": "concentracion_top10",
+   "valor": 42.27,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l4",
+   "indicador": "roll_empeora",
+   "valor": 11.16,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l4",
+   "indicador": "roll_a_3mas",
+   "valor": 4.71,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l5",
+   "indicador": "mora_2mas_clientes",
+   "valor": 3.55,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l5",
+   "indicador": "mora_2mas_exposicion",
+   "valor": 8.74,
+   "estado": "verde"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l5",
+   "indicador": "uso_alto_exposicion",
+   "valor": 27.38,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l5",
+   "indicador": "concentracion_top10",
+   "valor": 44.28,
+   "estado": "ambar"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l5",
+   "indicador": "roll_empeora",
+   "valor": 8.02,
+   "estado": "rojo"
+  },
+  {
+   "mes": "sep",
+   "segmento": "l5",
+   "indicador": "roll_a_3mas",
+   "valor": 2.47,
+   "estado": "verde"
+  }
+ ]
+}

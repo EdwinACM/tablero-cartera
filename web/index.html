@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Tablero de cartera de tarjetas con datos públicos de UCI: mora, roll rates, concentración y alertas.">
+<title>Tablero de cartera</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230071e3'/%3E%3Crect x='3' y='8' width='2.5' height='5' fill='white'/%3E%3Crect x='6.7' y='4' width='2.5' height='9' fill='white'/%3E%3Crect x='10.5' y='6' width='2.5' height='7' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<a class="salto" href="#alertas">Ir a las alertas</a>
+
+<header class="cabecera ancho">
+  <div class="cab-tema"><button type="button" id="tema" class="tema" aria-label="Cambiar tema de color">Tema: automático</button></div>
+  <h1 class="rev">Tablero de cartera de tarjetas</h1>
+  <p class="subtitulo rev">Base pública de UCI: 30,000 clientes de Taiwán, de abril a septiembre de 2005. Los montos están en dólares taiwaneses (NT$). Ejercicio educativo, sin datos de ningún banco.</p>
+</header>
+
+<div id="centinela" class="centinela" aria-hidden="true"></div>
+<div class="barra" id="barra">
+  <div class="barra-int ancho">
+    <div class="filtros" role="group" aria-label="Filtros del tablero">
+      <div class="campo campo-mes">
+        <span class="etiqueta" id="e-mes">Mes<span class="solo-lectores"> de 2005</span></span>
+        <div class="segmentado" id="f-mes" role="group" aria-labelledby="e-mes"></div>
+      </div>
+      <div class="campo campo-seg">
+        <label for="f-segmento">Segmento<span class="solo-lectores"> por tamaño de línea</span></label>
+        <select id="f-segmento"></select>
+      </div>
+    </div>
+    <nav class="nav" id="nav" aria-label="Secciones del tablero">
+      <a href="#resumen">Resumen</a>
+      <a href="#mora">Mora</a>
+      <a href="#roll">Roll rates</a>
+      <a href="#concentracion">Concentración</a>
+      <a href="#alertas">Alertas</a>
+      <span class="nav-ind" id="nav-ind" aria-hidden="true"></span>
+    </nav>
+  </div>
+</div>
+
+<main id="principal">
+  <p class="error ancho" id="error" role="alert" hidden></p>
+  <p class="solo-lectores" id="anuncio" role="status" aria-live="polite"></p>
+
+  <section class="sec sec-resumen ancho" id="resumen" aria-labelledby="t-kpi">
+    <h2 class="solo-lectores" id="t-kpi">Indicadores principales</h2>
+    <div class="rejilla12">
+      <div class="principal rev">
+        <p class="nombre">Atraso de 2 meses o más</p>
+        <p class="gigante"><span id="k-m2" class="num"></span></p>
+        <p class="quien">de los clientes</p>
+        <p class="cambio" id="k-m2-c"></p>
+      </div>
+      <div class="secundarios">
+        <div class="kpi rev">
+          <p class="nombre">Clientes</p>
+          <p class="valor"><span id="k-cli" class="num"></span></p>
+          <p class="cambio" id="k-cli-c"></p>
+        </div>
+        <div class="kpi rev">
+          <p class="nombre">Exposición (saldo positivo)</p>
+          <p class="valor"><span id="k-exp" class="num"></span><span class="unidad">millones</span></p>
+          <p class="cambio" id="k-exp-c"></p>
+        </div>
+        <div class="kpi rev">
+          <p class="nombre">Atraso de 2 meses o más</p>
+          <p class="valor"><span id="k-e2" class="num"></span></p>
+          <p class="quien">de la exposición</p>
+          <p class="cambio" id="k-e2-c"></p>
+        </div>
+      </div>
+    </div>
+    <p class="glosa rev">Exposición es la suma de los saldos positivos de los clientes. Atraso se mide en meses de pago vencido.</p>
+  </section>
+
+  <section class="sec sec-mora linea ancho" id="mora" aria-labelledby="t-mora" tabindex="-1">
+    <div class="rejilla12">
+      <div class="texto">
+        <h2 id="t-mora" class="rev">Mora por mes</h2>
+        <p class="suave rev" id="d-mora"></p>
+        <ul class="leyenda rev" id="l-mora"></ul>
+        <p class="suave rev" id="n-mora"></p>
+      </div>
+      <div class="lienzo-col">
+        <div class="grafica rev" id="g-mora" tabindex="0" role="group" aria-label="Mora por mes. Con las flechas izquierda y derecha recorres los meses."></div>
+        <details class="rev"><summary>Ver los datos de la gráfica</summary><div class="tabla-envoltura" id="t-datos-mora"></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-roll linea ancho" id="roll" aria-labelledby="t-roll" tabindex="-1">
+    <div class="rejilla12">
+      <h2 id="t-roll" class="rev cab-izq">Roll rates</h2>
+      <div class="cab-der">
+        <p class="glosa rev">Un roll rate es el porcentaje de clientes de un estado de pago que pasa a cada estado al mes siguiente.</p>
+        <p class="suave rev" id="d-roll"></p>
+      </div>
+      <div class="ancho-total tabla-envoltura rev" id="m-roll" data-ver></div>
+    </div>
+  </section>
+
+  <section class="sec sec-conc linea ancho" id="concentracion" aria-labelledby="t-otros" tabindex="-1">
+    <h2 id="t-otros" class="rev">Concentración e incumplimiento</h2>
+    <div class="rejilla12 cifras-conc">
+      <div class="kpi kpi-a rev">
+        <p class="nombre">Exposición del 10% de clientes con más saldo</p>
+        <p class="valor grande"><span id="k-top" class="num"></span></p>
+        <p class="cambio" id="k-top-c"></p>
+      </div>
+      <div class="kpi kpi-b rev">
+        <p class="nombre">Incumplimiento el mes siguiente</p>
+        <p class="valor grande"><span id="k-inc" class="num"></span></p>
+        <p class="cambio" id="k-inc-c"></p>
+      </div>
+    </div>
+
+    <div class="rejilla12 par">
+      <div class="bloque bloque-venc">
+        <h3 id="t-venc" class="rev">Vencimiento por estado de pago</h3>
+        <p class="suave rev" id="d-venc"></p>
+        <ul class="leyenda rev" id="l-venc"></ul>
+        <div class="grafica rev" id="g-venc"></div>
+        <details class="rev"><summary>Ver los datos de la gráfica</summary><div class="tabla-envoltura" id="t-datos-venc"></div></details>
+      </div>
+      <div class="bloque bloque-uso">
+        <h3 id="t-uso" class="rev">Concentración por banda de uso</h3>
+        <p class="suave rev" id="d-uso"></p>
+        <ul class="leyenda rev" id="l-uso"></ul>
+        <div class="grafica rev" id="g-uso"></div>
+        <details class="rev"><summary>Ver los datos de la gráfica</summary><div class="tabla-envoltura" id="t-datos-uso"></div></details>
+      </div>
+    </div>
+
+    <div class="rejilla12 seg">
+      <div class="bloque bloque-seg-g">
+        <div class="grafica rev" id="g-seg"></div>
+        <details class="rev"><summary>Ver los datos de la gráfica</summary><div class="tabla-envoltura" id="t-datos-seg"></div></details>
+      </div>
+      <div class="bloque bloque-seg-t">
+        <h3 id="t-seg" class="rev">Concentración por segmento</h3>
+        <p class="suave rev" id="d-seg"></p>
+        <ul class="leyenda rev" id="l-seg"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alertas linea ancho" id="alertas" aria-labelledby="t-alertas" tabindex="-1">
+    <h2 id="t-alertas" class="rev">Alertas</h2>
+    <div class="rejilla12 cab-alertas">
+      <p class="glosa rev">El semáforo compara cada indicador con sus umbrales: verde si no los alcanza, ámbar al llegar al primero y rojo al llegar al segundo.</p>
+      <p class="suave rev" id="d-alertas"></p>
+    </div>
+    <div class="resumen-alertas rev" id="resumen-alertas"></div>
+    <div class="controles rev">
+      <div class="campo">
+        <span class="etiqueta" id="e-estado">Semáforo</span>
+        <div class="segmentado" id="f-estado" role="group" aria-labelledby="e-estado"></div>
+      </div>
+      <div class="casilla">
+        <input type="checkbox" id="f-todos-seg">
+        <label for="f-todos-seg">Alertas de todos los segmentos</label>
+      </div>
+    </div>
+    <div class="tabla-envoltura rev" id="t-alertas-tabla" data-ver></div>
+  </section>
+
+  <section class="sec sec-umbrales linea ancho" id="umbrales" aria-labelledby="t-umb">
+    <div class="rejilla12">
+      <div class="texto">
+        <h2 id="t-umb" class="rev">Umbrales del semáforo</h2>
+        <p class="suave rev">Salen de <code>config/umbrales.json</code>. Para cambiarlos, edita ese archivo y vuelve a correr <code>python src/generar_json.py</code>.</p>
+      </div>
+      <div class="lienzo-col"><div class="tabla-envoltura rev" id="t-umbrales"></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie ancho">
+  <p id="pie"></p>
+  <p>Fuente: Yeh, I. C. y Lien, C. H. (2009), Expert Systems with Applications, 36(2). Licencia MIT.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

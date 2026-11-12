@@ -1,0 +1,7 @@
+# Base original y archivos intermedios (se regeneran con src/preparar_datos.py)
+/datos/
+__pycache__/
+.pytest_cache/
+.venv/
+.DS_Store
+node_modules/
